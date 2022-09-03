@@ -1,0 +1,22 @@
+# see https://docs.searxng.org/admin/engines/settings.html#use-default-settings
+use_default_settings: true
+server:
+  # base_url is defined in the SEARXNG_BASE_URL environment variable, see .env and docker-compose.yml
+  secret_key: "d034839ff616cdff67d4aacacff3d3fab685620a552c8897f5c62933441dad42 " # change this!
+  limiter: true # can be disabled for a private instance
+  image_proxy: true
+  method: "GET"
+ui:
+  static_use_hash: true
+redis:
+  url: redis://redis:6379/0
+general:
+  debug: false
+  instance_name: "Sohan's Search engine"
+  privacypolicy_url: false
+  donation_url: https://docs.searxng.org/donate.html
+  contact_url: false
+  enable_metrics: true
+search:
+  safe_search: 0
+  autocomplete: "duckduckgo"
