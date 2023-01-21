@@ -1,3 +1,4 @@
+#!/bin/bash
 cd
 sudo apt install && sudo apt upgrade -y
 sudo apt install docker.io -y
@@ -12,7 +13,6 @@ cd
 cd GCP-searxng
 mv settings.yml ~/Downloads/searxng-docker/searxng
 sudo docker-compose up -d
-
 curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
 read Ngrok_ID
 ngrok config add-authtoken $Ngrok_ID
